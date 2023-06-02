@@ -4,9 +4,9 @@ export function isEqual(firstText, secondText) {
     if (typeof (firstText) !== 'string' || typeof (secondText) !== 'string') throw Error('argument must be type of string');
     if (firstText.length !== secondText.length) return false;
     const cycleLength = firstText.length < secondText.length ? firstText.length : secondText.length;
-    for (let i = 0; i < cycleLength; i += 1){
-        if (firstText[i] !== secondText[i]) return false;
-    }
+        for (let i = 0; i < cycleLength; i += 1){
+            if (firstText[i] !== secondText[i]) return false;
+        }
     return true;
 }
 
