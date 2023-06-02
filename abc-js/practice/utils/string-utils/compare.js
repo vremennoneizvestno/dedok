@@ -1,6 +1,13 @@
 
 /** возвращает булевый ответ равны ли параметры firstText и secondText. */
 export function isEqual(firstText, secondText) {
+    if (typeof (firstText) !== 'string' || typeof (secondText) !== 'string') throw Error('argument must be type of string');
+    if (firstText.length !== secondText.length) return false;
+    const cycleLength = firstText.length < secondText.length ? firstText.length : secondText.length;
+    for (let i = 0; i < cycleLength; i += 1){
+        if (firstText[i] !== secondText[i]) return false;
+    }
+    return true;
 }
 
 /** возвращает true если аргументы не равны, и true в иных случаях. */
