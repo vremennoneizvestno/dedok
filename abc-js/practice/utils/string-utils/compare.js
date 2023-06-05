@@ -7,7 +7,6 @@ export function isEqual(firstText, secondText) {
         for (let i = 0; i < cycleLength; i += 1){
             if (firstText[i] !== secondText[i]) return false;
         }
-    console.log('bye');
     return true;
 }
 
