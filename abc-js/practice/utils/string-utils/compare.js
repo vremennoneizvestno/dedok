@@ -12,10 +12,23 @@ export function isEqual(firstText, secondText) {
 
 /** возвращает true если аргументы не равны, и true в иных случаях. */
 export function isNotEqual(firstText, secondText) {
+    if (typeof (firstText) !== 'string' || typeof (secondText) !== 'string') throw Error('argument must be type of string');
+    if (firstText.length !== secondText.length) return true;
+    const cycleLength = firstText.length < secondText.length ? firstText.length : secondText.length;
+        for (let i = 0; i < cycleLength; i += 1){
+            if (firstText[i] !== secondText[i]) return true;
+        }
+    return false;
 }
 
 /** возвращает булевый ответ больше ли параметр firstText чем secondText. */
 export function isMore(firstText, secondText) {
+    if (typeof (firstText) !== 'string' || typeof (secondText) !== 'string') throw Error('argument must be type of string');
+    const cycleLength = firstText.length < secondText.length ? firstText.length : secondText.length;
+        for (let i = 0; i < cycleLength; i += 1){
+            if (firstText[i] > secondText[i]) return true;
+        }
+    return false;
 }
 
 /** возвращает булевый ответ меньше ли параметр firstText чем secondText. */

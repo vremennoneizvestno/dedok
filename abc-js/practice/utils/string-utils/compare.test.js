@@ -57,45 +57,45 @@ describe('isNotEqualTests', () => {
     assertToBe(isNotEqual('a', 'a'), false);
     assertToBe(isNotEqual('a', 'b'), true);
   });
-  // test('количество символов одинаково, но не равны', () => {
-  //   assertToBe(isNotEqual('abc', 'abb'), true);
-  //   assertToBe(isNotEqual('abb', 'abc'), true);
-  // });
-  // test('символы совпадают, но у первого больше символов', () => {
-  //   assertToBe(isNotEqual('abbb', 'abb'), true);
-  // });
-  // test('символы совпадают, но у второго больше символов', () => {
-  //   assertToBe(isNotEqual('abb', 'abbb'), true);
-  // });
-  // test('пустые строки', () => {
-  //   assertToBe(isNotEqual('', ''), false);
-  // });
-  // test('пустые и непустая строка', () => {
-  //   assertToBe(isNotEqual('', 'a'), true);
-  //   assertToBe(isNotEqual('a', ''), true);
-  // });
-  // test('сложные одинаковые строки', () => {
-  //   assertToBe(isNotEqual(complexText, complexText), false);
-  // });
-  // test('сложные строки различной длины', () => {
-  //   assertToBe(isNotEqual(complexText + 'a', complexText), true);
-  //   assertToBe(isNotEqual(complexText + '\n', complexText), true);
-  //   assertToBe(isNotEqual(complexText + ZERO_CODE_CHAR, complexText), true);
-  // });
-  // test('несоответствие типа второго аргумента приводит к исключению', () => {
-  //   assertThrow(() => isNotEqual('2', 2), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual('2', true), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual('2', []), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual('2', null), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual('2'), 'argument must be type of string');
-  // });
-  // test('несоответствие типа первого аргумента приводит к исключению', () => {
-  //   assertThrow(() => isNotEqual(2, '2'), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual(true, '1'), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual([], '1'), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual(null, '1'), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual(undefined, '1'), 'argument must be type of string');
-  // });
+  test('количество символов одинаково, но не равны', () => {
+    assertToBe(isNotEqual('abc', 'abb'), true);
+    assertToBe(isNotEqual('abb', 'abc'), true);
+  });
+  test('символы совпадают, но у первого больше символов', () => {
+    assertToBe(isNotEqual('abbb', 'abb'), true);
+  });
+  test('символы совпадают, но у второго больше символов', () => {
+    assertToBe(isNotEqual('abb', 'abbb'), true);
+  });
+  test('пустые строки', () => {
+    assertToBe(isNotEqual('', ''), false);
+  });
+  test('пустые и непустая строка', () => {
+    assertToBe(isNotEqual('', 'a'), true);
+    assertToBe(isNotEqual('a', ''), true);
+  });
+  test('сложные одинаковые строки', () => {
+    assertToBe(isNotEqual(complexText, complexText), false);
+  });
+  test('сложные строки различной длины', () => {
+    assertToBe(isNotEqual(complexText + 'a', complexText), true);
+    assertToBe(isNotEqual(complexText + '\n', complexText), true);
+    assertToBe(isNotEqual(complexText + ZERO_CODE_CHAR, complexText), true);
+  });
+  test('несоответствие типа второго аргумента приводит к исключению', () => {
+    assertThrow(() => isNotEqual('2', 2), 'argument must be type of string');
+    assertThrow(() => isNotEqual('2', true), 'argument must be type of string');
+    assertThrow(() => isNotEqual('2', []), 'argument must be type of string');
+    assertThrow(() => isNotEqual('2', null), 'argument must be type of string');
+    assertThrow(() => isNotEqual('2'), 'argument must be type of string');
+  });
+  test('несоответствие типа первого аргумента приводит к исключению', () => {
+    assertThrow(() => isNotEqual(2, '2'), 'argument must be type of string');
+    assertThrow(() => isNotEqual(true, '1'), 'argument must be type of string');
+    assertThrow(() => isNotEqual([], '1'), 'argument must be type of string');
+    assertThrow(() => isNotEqual(null, '1'), 'argument must be type of string');
+    assertThrow(() => isNotEqual(undefined, '1'), 'argument must be type of string');
+  });
 });
 
 describe('isMoreTests', () => {
@@ -103,28 +103,28 @@ describe('isMoreTests', () => {
     assertToBe(isMore('ca', 'ba'), true);
     assertToBe(isMore('cca', 'cba'), true);
   });
-  // test('первая строка не больше второй по первым символам', () => {
-  //   assertToBe(isMore('ab', 'ac'), false);
-  //   assertToBe(isMore('cba', 'cca'), false);
-  // });
-  // test('первая строка больше второй по последнему символу', () => {
-  //   assertToBe(isMore('abc', 'abb'), true);
-  // });
-  // test('первая строка не больше второй по последнему символу', () => {
-  //   assertToBe(isMore('abb', 'abc'), false);
-  // });
-  // test('первая и вторая равны', () => {
-  //   assertToBe(isMore('abb', 'abb'), false);
-  // });
-  // test('первая больше по длине и по содержанию', () => {
-  //   assertToBe(isMore('abca', 'abb'), true);
-  // });
-  // test('первая больше по длине, но меньше по содержанию', () => {
-  //   assertToBe(isMore('abaa', 'abb'), false);
-  // });
-  // test('первая и вторая равны по содержанию, но первая больше по длине', () => {
-  //   assertToBe(isMore('abba', 'abb'), true);
-  // });
+  test('первая строка не больше второй по первым символам', () => {
+    assertToBe(isMore('ab', 'ac'), false);
+    assertToBe(isMore('cba', 'cca'), false);
+  });
+  test('первая строка больше второй по последнему символу', () => {
+    assertToBe(isMore('abc', 'abb'), true);
+  });
+  test('первая строка не больше второй по последнему символу', () => {
+    assertToBe(isMore('abb', 'abc'), false);
+  });
+  test('первая и вторая равны', () => {
+    assertToBe(isMore('abb', 'abb'), false);
+  });
+  test('первая больше по длине и по содержанию', () => {
+    assertToBe(isMore('abca', 'abb'), true);
+  });
+  test('первая больше по длине, но меньше по содержанию', () => {
+    assertToBe(isMore('abaa', 'abb'), false);
+  });
+  test('первая и вторая равны по содержанию, но первая больше по длине', () => {
+    assertToBe(isMore('abba', 'abb'), true);
+  });
   // test('первая и вторая равны по содержанию, но вторая больше по длине', () => {
   //   assertToBe(isMore('abb', 'abba'), false);
   // });
